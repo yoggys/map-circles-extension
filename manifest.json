@@ -1,0 +1,27 @@
+{
+  "name": "Map circles",
+  "description": "Draw circles on maps based on selected points using shift/ctrl click.",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions": ["activeTab", "tabs"],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.google.pl/maps/*",
+        "https://google.pl/maps/*",
+        "https://www.openstreetmap.org/*",
+        "https://openstreetmap.org/*"
+      ],
+      "js": ["index.js"]
+    }
+  ],
+  "action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  }
+}
