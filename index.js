@@ -1,4 +1,7 @@
 const config = {
+  font: "Arial",
+  fontColor: "rgba(255, 0, 0)",
+  fontSize: 20,
   centerDotColor: "rgba(0, 0, 255)",
   radiusDotColor: "rgba(0, 255, 0)",
   circleFillColor: "rgba(255, 0, 0, 0.1)",
@@ -16,15 +19,16 @@ document.body.appendChild(canvas);
 var centerPoint = null;
 var radiusPoint = null;
 
-const calculateDistance = (point1, point2) => {
+const calculateRadius = (point1, point2) => {
   const a = point1.x - point2.x;
   const b = point1.y - point2.y;
   return Math.sqrt(a * a + b * b);
 };
 
 const drawMainCircle = () => {
+  if (!(centerPoint && radiusPoint)) return;
   const ctx = canvas.getContext("2d");
-  const radius = calculateDistance(centerPoint, radiusPoint);
+  const radius = calculateRadius(centerPoint, radiusPoint);
 
   ctx.beginPath();
   ctx.arc(centerPoint.x, centerPoint.y, radius, 0, 2 * Math.PI);
@@ -33,8 +37,9 @@ const drawMainCircle = () => {
   ctx.strokeStyle = config.circleBorderColor;
   ctx.lineWidth = config.circleBorderWidth;
   ctx.stroke();
-
   ctx.closePath();
+
+  drawDistance(ctx, radius);
 };
 
 const calculateRadiusPoints = () => {
@@ -87,10 +92,37 @@ const drawRadiusPoints = () => {
   }
 };
 
-const drawCanvas = () => {
-  if (centerPoint && radiusPoint) {
-    drawMainCircle();
+const drawDistance = (ctx, radius) => {
+  // Based on scale on the page
+  let scale = document.querySelector('[jsaction="scale.click"]');
+  if (scale) {
+    scale_width = scale
+      .getElementsByTagName("div")[0]
+      .style.width.replace("px", "");
+    scale = scale.innerText.split(" ");
+    value = scale[0];
+    unit = scale[1];
+
+    value_per_pixel = value / scale_width;
+    radius_in_unit = radius * value_per_pixel;
+
+    const result = `Radius: ${radius_in_unit.toFixed(2)} ${unit}`;
+
+    ctx.font = `${config.fontSize}px ${config.font}`;
+    ctx.fontColor = config.fontColor;
+    ctx.fillStyle = config.fontColor;
+    ctx.textAlign = "center";
+
+    ctx.fillText(
+      result,
+      centerPoint.x,
+      centerPoint.y - radius - config.fontSize
+    );
   }
+};
+
+const drawCanvas = () => {
+  drawMainCircle();
   drawRadiusPoints();
 };
 

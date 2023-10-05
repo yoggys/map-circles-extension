@@ -9,6 +9,8 @@
       "matches": [
         "https://www.google.pl/maps/*",
         "https://google.pl/maps/*",
+        "https://www.google.com/maps/*",
+        "https://google.com/maps/*",
         "https://www.openstreetmap.org/*",
         "https://openstreetmap.org/*"
       ],
