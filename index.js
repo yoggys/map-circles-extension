@@ -1,5 +1,5 @@
 var canvas = document.createElement("canvas");
-canvas.style = "position: absolute; z-index: 100; pointer-events: none;";
+canvas.style = "position: absolute; z-index: 1000; pointer-events: none;";
 canvas.width = window.screen.width;
 canvas.height = window.screen.height;
 
