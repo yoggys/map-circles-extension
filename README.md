@@ -2,6 +2,8 @@
 
 The Map Circles Browser Extension is a convenient tool that empowers users to effortlessly draw circles directly on web pages using a browser plugin. With this extension, you can easily create and visualize circles with just a few clicks.
 
+![Example usage](https://github.com/yoggys/map-circles-extension/blob/main/assets/usage.png)
+
 ## Installation
 
 To install the Circle Drawing Browser Plugin, follow these straightforward steps:
