@@ -32,7 +32,6 @@ The plugin provides options for customizing the appearance of the drawn circles:
 - You can edit the list of usable websites in the manifest file.
 - You can change the fill color and stroke color of the circles.
 - Adjust the width of the circle's border.
-- Choose to draw partial circles by modifying the start and end angles.
 
 ## Compatibility
 

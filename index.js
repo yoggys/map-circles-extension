@@ -1,3 +1,11 @@
+const config = {
+  centerDotColor: "rgba(0, 0, 255)",
+  radiusDotColor: "rgba(0, 255, 0)",
+  circleFillColor: "rgba(255, 0, 0, 0.1)",
+  circleBorderColor: "rgba(255, 0, 0)",
+  circleBorderWidth: 3,
+};
+
 var canvas = document.createElement("canvas");
 canvas.style = "position: absolute; z-index: 1000; pointer-events: none;";
 canvas.width = window.screen.width;
@@ -20,10 +28,10 @@ const drawMainCircle = () => {
 
   ctx.beginPath();
   ctx.arc(centerPoint.x, centerPoint.y, radius, 0, 2 * Math.PI);
-  ctx.fillStyle = "rgba(255, 0, 0, 0.1)";
+  ctx.fillStyle = config.circleFillColor;
   ctx.fill();
-  ctx.lineWidth = 3;
-  ctx.strokeStyle = "red";
+  ctx.strokeStyle = config.circleBorderColor;
+  ctx.lineWidth = config.circleBorderWidth;
   ctx.stroke();
 
   ctx.closePath();
@@ -66,15 +74,15 @@ const drawDot = (point, color) => {
 
 const drawRadiusPoints = () => {
   if (centerPoint) {
-    drawDot(centerPoint, "rgba(0, 0, 255)");
+    drawDot(centerPoint, config.centerDotColor);
   }
   if (radiusPoint) {
-    drawDot(radiusPoint, "rgba(0, 255, 0)");
+    drawDot(radiusPoint, config.radiusDotColor);
   }
 
   if (radiusPoint && centerPoint) {
     calculateRadiusPoints().forEach((point) => {
-      drawDot(point, "rgba(0, 255, 0)");
+      drawDot(point, config.radiusDotColor);
     });
   }
 };
