@@ -106,7 +106,7 @@ const drawDistance = (ctx, radius) => {
     value_per_pixel = value / scale_width;
     radius_in_unit = radius * value_per_pixel;
 
-    const result = `Radius: ${radius_in_unit.toFixed(2)} ${unit}`;
+    const result = `Radius: ~${radius_in_unit.toFixed(2)} ${unit}`;
 
     ctx.font = `${config.fontSize}px ${config.font}`;
     ctx.fontColor = config.fontColor;
