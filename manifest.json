@@ -1,6 +1,6 @@
 {
   "name": "Map circles",
-  "description": "Draw circles on maps based on selected points using shift/ctrl click.",
+  "description": "Draw circles on maps based on selected points using shift/ctrl + mouse click.",
   "version": "1.0",
   "manifest_version": 3,
   "permissions": ["activeTab", "tabs"],

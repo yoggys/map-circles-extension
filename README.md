@@ -41,5 +41,7 @@ The current manifest includes pages for [Google Maps](https://www.google.pl/maps
 
 ## Feedback and Support
 
-For questions, feedback, or technical assistance, please reach out to us through the issues on our GitHub repository.
+For questions, feedback, or technical assistance, please reach out to us through the issues on our [GitHub repository](https://github.com/yoggys/map-circles-extension).
 We hope it enhances your map adventures and enhances your exploration and visualization experience!
+
+Plugin created at the request of [@graf](https://www.youtube.com/user/I360FlipStuff).
